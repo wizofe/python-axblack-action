@@ -4,7 +4,7 @@ LABEL "maintainer" = "Ioannis Valasais <code@wizofe.uk>"
 ADD requirements.txt /requirements.txt
 ADD entrypoint.sh /entrypoint.sh
 
-RUN apk add gcc musl-dev && \
+RUN sudo apt install gcc musl-dev -y && \
     pip install -r requirements.txt
 
 ENTRYPOINT ["/entrypoint.sh"]
