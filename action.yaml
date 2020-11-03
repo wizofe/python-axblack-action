@@ -1,5 +1,5 @@
 # action.yaml
-name: 'Python Black Check'
+name: 'Python axblack formatting'
 description: 'GitHub action to use customised (ax)black to format your Python code'
 branding:
   icon: 'code'
