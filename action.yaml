@@ -1,0 +1,25 @@
+# action.yaml
+name: 'Python Black Check'
+description: 'GitHub action to use customised (ax)black to format your Python code'
+branding:
+  icon: 'code'
+  color: 'black'
+inputs:
+  path:
+    description: 'File or directory to run black on.'
+    required: false
+    default: '.'
+  line-length:
+    description: 'The number of characters allowed per line.'
+    required: false
+    default: '88'
+outputs:
+  output:
+    description: 'The output of black.'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.line-length }}
+    - ${{ inputs.path }}
